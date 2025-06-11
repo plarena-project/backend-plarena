@@ -10,8 +10,9 @@ class Pembayaran extends Model
     use HasFactory;
 
     protected $table = 'pembayaran';
-    protected $primaryKey = 'id_bayar';
+    protected $primaryKey = 'id_pembayaran';
     public $timestamps = false;
+
     protected $fillable = [
         'tanggal_pesan',
         'jenis_lapangan',
@@ -19,11 +20,12 @@ class Pembayaran extends Model
         'lama_sewa',
         'jam_habis',
         'total',
-        'id_pemesanan',
+        'bukti_bayar',
+        'id_pemesanan'
     ];
 
     public function pemesanan()
     {
-        return $this->belongsTo(Pemesanan::class, 'id_pemesanan');
+        return $this->belongsTo(Pemesanan::class, 'id_pemesanan', 'id_pemesanan');
     }
 }
