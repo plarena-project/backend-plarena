@@ -11,7 +11,7 @@ class Pembayaran extends Model
 
     protected $table = 'pembayaran';
     protected $primaryKey = 'id_bayar';
-
+    public $timestamps = false;
     protected $fillable = [
         'tanggal_pesan',
         'jenis_lapangan',
